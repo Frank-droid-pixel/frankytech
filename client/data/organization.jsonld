@@ -1,0 +1,13 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "FRANKY TECH",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "An all-in-one business platform for invoicing, customers, inventory, payments, reviews and referrals.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}

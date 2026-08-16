@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin: Feedback — FRANKY TECH</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/logo/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logo/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div id="toast-region" aria-live="polite"></div>
+<div id="appShellRoot"></div>
+<template id="pageContentTemplate">
+  <div class="page-head"><div><h1>Platform Feedback</h1><p style="margin:0;">What users are telling us about FRANKY TECH itself.</p></div></div>
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead><tr><th>From</th><th>Type</th><th>Message</th><th>Status</th></tr></thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+    <div class="dash-empty" id="emptyState" style="display:none;">No feedback submitted yet.</div>
+  </div>
+</template>
+<script src="/js/auth.js" defer></script>
+<script src="/js/admin-shell.js" defer></script>
+<script src="/js/admin-feedback.js" defer></script>
+</body>
+</html>

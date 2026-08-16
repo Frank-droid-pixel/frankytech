@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — FRANKY TECH</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/logo/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logo/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div id="toast-region" aria-live="polite"></div>
+<div id="appShellRoot"></div>
+
+<template id="pageContentTemplate">
+  <div class="page-head">
+    <div><h1>Support</h1><p style="margin:0;">Need help? Open a ticket and we'll get back to you.</p></div>
+    <div class="toolbar"><button class="btn btn-primary" id="newTicketBtn">+ New ticket</button></div>
+  </div>
+
+  <div id="ticketListView">
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Subject</th><th>Priority</th><th>Status</th><th>Updated</th></tr></thead>
+        <tbody id="ticketsBody"></tbody>
+      </table>
+      <div class="dash-empty" id="emptyState" style="display:none;">No support tickets yet.</div>
+    </div>
+  </div>
+
+  <div id="ticketThreadView" style="display:none;">
+    <button class="btn btn-ghost" id="backToListBtn" style="margin-bottom:16px;">← Back to tickets</button>
+    <div class="dash-panel">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+        <h3 id="threadSubject" style="margin:0;"></h3>
+        <span class="badge" id="threadStatus"></span>
+      </div>
+      <div id="threadMessages" style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;"></div>
+      <form id="replyForm">
+        <div class="field"><textarea id="replyMessage" name="message" rows="3" placeholder="Type a reply…" required></textarea></div>
+        <button type="submit" class="btn btn-primary" id="replyBtn"><span class="spinner"></span><span class="btn-label">Send reply</span></button>
+      </form>
+    </div>
+  </div>
+</template>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="modal-head"><h3>New support ticket</h3><button class="modal-close" id="modalClose">&times;</button></div>
+    <div class="form-alert" id="formAlert" role="alert"></div>
+    <form id="ticketForm" novalidate>
+      <div class="field"><label for="subject">Subject</label><input type="text" id="subject" name="subject" required></div>
+      <div class="field">
+        <label for="priority">Priority</label>
+        <select id="priority" name="priority"><option value="low">Low</option><option value="normal" selected>Normal</option><option value="high">High</option><option value="urgent">Urgent</option></select>
+      </div>
+      <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="4" required></textarea></div>
+      <button type="submit" class="btn btn-primary btn-block" id="saveBtn"><span class="spinner"></span><span class="btn-label">Open ticket</span></button>
+    </form>
+  </div>
+</div>
+
+<script src="/js/auth.js" defer></script>
+<script src="/js/app-shell.js" defer></script>
+<script src="/js/support.js" defer></script>
+</body>
+</html>

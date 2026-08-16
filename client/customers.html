@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customers — FRANKY TECH</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/logo/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logo/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div id="toast-region" aria-live="polite"></div>
+<div id="appShellRoot"></div>
+
+<template id="pageContentTemplate">
+  <div class="page-head">
+    <div>
+      <h1>Customers</h1>
+      <p style="margin:0;">Everyone you invoice, quote or serve.</p>
+    </div>
+    <div class="toolbar">
+      <input type="search" id="searchInput" placeholder="Search customers…">
+      <button class="btn btn-primary" id="addBtn">+ Add customer</button>
+    </div>
+  </div>
+
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th>Name</th><th>Company</th><th>Phone</th><th>Email</th><th>Balance</th><th></th></tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+    <div class="dash-empty" id="emptyState" style="display:none;">No customers yet — add your first one to get started.</div>
+  </div>
+</template>
+
+<!-- Add / edit modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="modalTitle">Add customer</h3>
+      <button class="modal-close" id="modalClose">&times;</button>
+    </div>
+    <div class="form-alert" id="formAlert" role="alert"></div>
+    <form id="customerForm" novalidate>
+      <input type="hidden" name="id">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <div class="error"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="company">Company</label><input type="text" id="company" name="company"></div>
+        <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="email">Email</label><input type="email" id="email" name="email"></div>
+        <div class="field"><label for="country">Country</label><input type="text" id="country" name="country"></div>
+      </div>
+      <div class="field"><label for="address">Address</label><input type="text" id="address" name="address"></div>
+      <div class="field"><label for="taxId">Tax ID</label><input type="text" id="taxId" name="taxId"></div>
+      <div class="field"><label for="notes">Notes</label><textarea id="notes" name="notes" rows="2"></textarea></div>
+      <button type="submit" class="btn btn-primary btn-block" id="saveBtn">
+        <span class="spinner"></span><span class="btn-label">Save customer</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<script src="/js/auth.js" defer></script>
+<script src="/js/app-shell.js" defer></script>
+<script src="/js/customers.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews — FRANKY TECH</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/logo/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logo/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div id="toast-region" aria-live="polite"></div>
+<div id="appShellRoot"></div>
+
+<template id="pageContentTemplate">
+  <div class="page-head">
+    <div><h1>Reviews</h1><p style="margin:0;">What your customers are saying — request one after a paid invoice.</p></div>
+    <div class="toolbar">
+      <select id="statusFilter">
+        <option value="">All</option>
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="hidden">Hidden</option>
+        <option value="flagged">Flagged</option>
+      </select>
+      <button class="btn btn-primary" id="requestBtn">+ Request a review</button>
+    </div>
+  </div>
+
+  <div class="review-summary" style="justify-content:flex-start; margin-bottom:24px;">
+    <span class="stars" id="avgStars">☆☆☆☆☆</span>
+    <span id="summaryText" style="color:var(--text-muted); font-size:var(--small);"></span>
+  </div>
+
+  <div id="reviewList"></div>
+  <div class="dash-empty" id="emptyState" style="display:none;">No reviews yet.</div>
+</template>
+
+<div class="modal-overlay" id="requestModalOverlay">
+  <div class="modal-box">
+    <div class="modal-head"><h3>Request a review</h3><button class="modal-close" id="requestModalClose">&times;</button></div>
+    <div class="form-alert" id="requestAlert" role="alert"></div>
+    <form id="requestForm" novalidate>
+      <div class="field"><label for="customerId">Customer</label><select id="customerId" name="customerId" required></select></div>
+      <div class="field"><label for="invoiceId">Related invoice (optional — makes the review "Verified")</label><select id="invoiceId" name="invoiceId"><option value="">None</option></select></div>
+      <button type="submit" class="btn btn-primary btn-block" id="requestSaveBtn"><span class="spinner"></span><span class="btn-label">Generate review link</span></button>
+    </form>
+    <div id="linkResult" style="display:none; margin-top:16px; padding:14px; background:var(--surface-secondary); border-radius:var(--radius-sm); word-break:break-all; font-size:var(--small);"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="respondModalOverlay">
+  <div class="modal-box">
+    <div class="modal-head"><h3>Respond to review</h3><button class="modal-close" id="respondModalClose">&times;</button></div>
+    <form id="respondForm" novalidate>
+      <div class="field"><label for="response">Your response</label><textarea id="response" name="response" rows="4" required></textarea></div>
+      <button type="submit" class="btn btn-primary btn-block" id="respondSaveBtn"><span class="spinner"></span><span class="btn-label">Post response</span></button>
+    </form>
+  </div>
+</div>
+
+<script src="/js/auth.js" defer></script>
+<script src="/js/app-shell.js" defer></script>
+<script src="/js/reviews.js" defer></script>
+</body>
+</html>

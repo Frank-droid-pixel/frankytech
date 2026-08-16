@@ -1,0 +1,12 @@
+-- =========================================================
+-- FRANKY TECH — Migration 0006: Bootstrap Admin Note
+-- No default admin is created automatically — granting the
+-- FIRST platform admin is a manual, deliberate step (never
+-- silently make an arbitrary account an admin). Run this by
+-- hand, once, replacing the email:
+--
+--   UPDATE users SET is_platform_admin = true WHERE email = 'you@example.com';
+--
+-- This file intentionally contains no executable statements.
+-- =========================================================
+SELECT 1;

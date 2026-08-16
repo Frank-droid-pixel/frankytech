@@ -1,0 +1,16 @@
+{
+  "name": "FRANKY TECH — Build. Manage. Grow.",
+  "short_name": "FRANKY TECH",
+  "description": "An all-in-one business platform for invoicing, customers, inventory, payments, reviews and referrals.",
+  "start_url": "/dashboard.html",
+  "display": "standalone",
+  "background_color": "#F3F5F7",
+  "theme_color": "#1B3A5C",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/assets/logo/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/logo/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/logo/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/assets/logo/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in — FRANKY TECH</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/logo/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logo/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div id="toast-region" aria-live="polite"></div>
+
+<div class="auth-shell">
+  <aside class="auth-side">
+    <div class="brand">
+      <img src="/assets/logo/icon.png" width="34" height="34" alt="">
+      <span class="w">FRANKY<span> TECH</span></span>
+    </div>
+    <div>
+      <h2>Welcome back.</h2>
+      <p>Log in to manage your invoices, customers and business performance.</p>
+    </div>
+    <span class="foot">Build. Manage. Grow.</span>
+  </aside>
+
+  <div class="auth-main">
+    <div class="auth-card">
+      <a href="/" class="top-link">
+        <img src="/assets/logo/icon.png" width="34" height="34" alt="">
+        <span class="w">FRANKY<span> TECH</span></span>
+      </a>
+      <h1>Log in</h1>
+      <p class="sub">Enter your details to access your dashboard.</p>
+
+      <div class="form-alert" id="formAlert" role="alert"></div>
+
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+          <div class="error"></div>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" required>
+          <div class="error"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitBtn">
+          <span class="spinner"></span>
+          <span class="btn-label">Log in</span>
+        </button>
+      </form>
+
+      <p class="switch">New to FRANKY TECH? <a href="/register.html">Create an account</a></p>
+      <p class="switch" style="color:var(--text-muted); margin-top:8px;">Demo login (after seeding): <span class="mono">demo@frankytech.test</span> / <span class="mono">DemoPass123!</span></p>
+    </div>
+  </div>
+</div>
+
+<script src="/js/auth.js" defer></script>
+<script src="/js/login.js" defer></script>
+</body>
+</html>

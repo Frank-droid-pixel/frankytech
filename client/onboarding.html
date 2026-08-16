@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set up your business — FRANKY TECH</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/logo/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/logo/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div id="toast-region" aria-live="polite"></div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" class="nav-logo">
+      <img class="logo-icon" src="/assets/logo/icon.png" alt="" width="38" height="38">
+      <span class="logo-word">FRANKY<span> TECH</span></span>
+    </a>
+    <div class="nav-actions">
+      <button class="btn btn-ghost" id="logoutBtn" type="button">Log out</button>
+    </div>
+  </div>
+</header>
+
+<div class="wizard-shell">
+  <span class="eyebrow">Step <span id="stepNum">1</span> of 4</span>
+  <h1>Set up your business</h1>
+  <p>This takes about a minute — you can always change these details later.</p>
+
+  <div class="wizard-progress">
+    <div class="bar"><span id="progressBar" style="width:25%"></span></div>
+  </div>
+
+  <div class="form-alert" id="formAlert" role="alert"></div>
+
+  <form id="onboardingForm" novalidate>
+
+    <div class="wizard-step active" data-step="1">
+      <span class="wizard-step-label">Business basics</span>
+      <div class="field">
+        <label for="name">Business name</label>
+        <input type="text" id="name" name="name" required>
+        <div class="error"></div>
+      </div>
+      <div class="field">
+        <label for="businessType">Business type</label>
+        <select id="businessType" name="businessType">
+          <option value="">Select a type</option>
+          <option>Retail</option>
+          <option>Construction</option>
+          <option>Photography</option>
+          <option>Restaurant</option>
+          <option>Freelance</option>
+          <option>Electronics</option>
+          <option>Tailoring</option>
+          <option>Mechanic / Auto</option>
+          <option>Service business</option>
+          <option>Online business</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="wizard-step" data-step="2">
+      <span class="wizard-step-label">Contact & location</span>
+      <div class="field-row">
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="field">
+          <label for="email">Business email</label>
+          <input type="email" id="email" name="email">
+        </div>
+      </div>
+      <div class="field">
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address">
+      </div>
+      <div class="field">
+        <label for="country">Country</label>
+        <input type="text" id="country" name="country">
+      </div>
+    </div>
+
+    <div class="wizard-step" data-step="3">
+      <span class="wizard-step-label">Currency & tax</span>
+      <div class="field-row">
+        <div class="field">
+          <label for="currency">Currency</label>
+          <select id="currency" name="currency">
+            <option value="XAF">XAF — Central African Franc</option>
+            <option value="USD">USD — US Dollar</option>
+            <option value="EUR">EUR — Euro</option>
+            <option value="GBP">GBP — British Pound</option>
+            <option value="NGN">NGN — Nigerian Naira</option>
+            <option value="CAD">CAD — Canadian Dollar</option>
+            <option value="AUD">AUD — Australian Dollar</option>
+            <option value="ZAR">ZAR — South African Rand</option>
+            <option value="GHS">GHS — Ghanaian Cedi</option>
+            <option value="KES">KES — Kenyan Shilling</option>
+            <option value="AED">AED — UAE Dirham</option>
+            <option value="CHF">CHF — Swiss Franc</option>
+            <option value="JPY">JPY — Japanese Yen</option>
+            <option value="CNY">CNY — Chinese Yuan</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="taxId">Tax ID <span style="font-weight:400;color:var(--text-muted);">(optional)</span></label>
+          <input type="text" id="taxId" name="taxId">
+        </div>
+      </div>
+    </div>
+
+    <div class="wizard-step" data-step="4">
+      <span class="wizard-step-label">Invoice preferences</span>
+      <div class="field">
+        <label for="invoicePrefix">Invoice prefix</label>
+        <input type="text" id="invoicePrefix" name="invoicePrefix" value="INV" maxlength="10">
+      </div>
+      <div class="field">
+        <label for="invoiceTerms">Default payment terms <span style="font-weight:400;color:var(--text-muted);">(optional)</span></label>
+        <textarea id="invoiceTerms" name="invoiceTerms" rows="3" placeholder="e.g. Payment due within 14 days."></textarea>
+      </div>
+      <div class="field">
+        <label for="invoiceFooter">Invoice footer note <span style="font-weight:400;color:var(--text-muted);">(optional)</span></label>
+        <textarea id="invoiceFooter" name="invoiceFooter" rows="2" placeholder="e.g. Thank you for your business!"></textarea>
+      </div>
+    </div>
+
+    <div class="wizard-nav">
+      <button type="button" class="btn btn-ghost" id="backBtn" style="visibility:hidden;">Back</button>
+      <button type="button" class="btn btn-primary" id="nextBtn">
+        <span class="spinner"></span>
+        <span class="btn-label">Continue</span>
+      </button>
+    </div>
+  </form>
+</div>
+
+<script src="/js/auth.js" defer></script>
+<script src="/js/onboarding.js" defer></script>
+</body>
+</html>

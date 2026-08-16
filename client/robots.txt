@@ -1,0 +1,34 @@
+# FRANKY TECH — robots.txt
+# Public marketing pages are indexable. Every authenticated app
+# page, the admin panel, and the customer portal are excluded —
+# they also carry <meta name="robots" content="noindex"> as a
+# second layer, since some crawlers ignore robots.txt.
+
+User-agent: *
+Allow: /
+Allow: /index.html
+
+Disallow: /dashboard.html
+Disallow: /customers.html
+Disallow: /products.html
+Disallow: /invoices.html
+Disallow: /invoice-new.html
+Disallow: /invoice-view.html
+Disallow: /quotations.html
+Disallow: /quotation-new.html
+Disallow: /quotation-view.html
+Disallow: /receipts.html
+Disallow: /receipt-view.html
+Disallow: /expenses.html
+Disallow: /reports.html
+Disallow: /reviews.html
+Disallow: /referrals.html
+Disallow: /subscription.html
+Disallow: /team.html
+Disallow: /support.html
+Disallow: /onboarding.html
+Disallow: /portal.html
+Disallow: /review-submit.html
+Disallow: /admin/
+
+Sitemap: /sitemap.xml
